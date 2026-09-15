@@ -36,7 +36,7 @@ session = request('/api/sessions', 'POST', {})['id']
 try:
     result = request(f'/api/sessions/{session}/messages', 'POST',
                      {'content': 'zqxjvplm zzqxxv', 'mode': 'ask', 'provider': 'anthropic'})
-    assert result['assistant']['details']['grounded'] is False
+    assert result['assistant']['grounded'] is False
     assert len(request(f'/api/sessions/{session}')['messages']) == 2
 finally:
     request(f'/api/sessions/{session}', 'DELETE')

@@ -5,7 +5,7 @@ The assignment asks for a working AI application plus an engineering handoff. Th
 ## Run your prepared copy
 
 1. Open PowerShell in this folder and run `./start.ps1`.
-2. Open http://127.0.0.1:8000.
+2. Open the preview URL printed by the launcher (also saved in `.runtime/preview-url.txt`). It chooses an available port if 8000 is occupied.
 3. Keep Ollama selected for the required local-model demonstration. Model generation on this CPU can take several minutes; prepare the essay and HTML document before recording.
 
 Start with README.md. Review docs/verification.md for measured results and remaining limitations. PRD.md, design.md and architecture.md explain the implementation. The files in agent-transcripts/ preserve development failures and actual test logs.
@@ -13,11 +13,11 @@ Start with README.md. Review docs/verification.md for measured results and remai
 ## Finish the external submission
 
 - Read and understand the code and trade-offs so you can explain your own submission.
-- Publish the source package to a public GitHub repository using docs/publishing.md. Keep .env, .runtime, dependencies and downloaded transcripts excluded.
+- Review the published source at https://github.com/Sathvik257/lenny-growth-assistant. Keep .env, .runtime, dependencies and downloaded transcripts excluded from future commits.
 - Record a real 2–3 minute demo with your camera visible, following docs/demo-script.md. Show the running local model, evidence, saved chats, essay and artifact. Upload it to YouTube and check access to the link.
 - Submit the repository and video links using the assignment form: https://forms.gle/LgotDHNVxW1mbzNE7.
 
-The brief lists 15 September 2026 EOD as its deadline and does not specify a timezone. No public repository, video upload or form submission has been performed by this project.
+The brief lists 15 September 2026 EOD as its deadline and does not specify a timezone. The public repository is published and its initial GitHub Actions run passed. Video upload and form submission remain to be completed.
 
 ## Host on Render
 

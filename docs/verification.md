@@ -51,7 +51,7 @@ In total, the final source passed 33 automated checks (23 backend on PostgreSQL,
 - Docker Compose is supplied but has not been run on this Windows machine.
 - Broad semantic accuracy, concurrent load, full keyboard/accessibility audit and 200% text scaling have not been established.
 - The local workspace identifier separates sessions but is not production authentication.
-- Public GitHub publication, the real camera-enabled YouTube demo, and the assignment form submission remain external steps. No links to those outputs are invented.
+- Public GitHub source is published at https://github.com/Sathvik257/lenny-growth-assistant; initial automated workflow run 34956514354 passed. The real camera-enabled YouTube demo and assignment form submission remain pending.
 
 ## Hosting and efficiency update
 

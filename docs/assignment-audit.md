@@ -50,7 +50,7 @@ The engagement explicitly asks for deploying locally, and the demo must run Olla
 | Structured logs and diagnostic visibility | API request IDs/status/timing; model/retrieval events; UI error handling | Present; artifact security tests cover rendering safeguards, no centralized browser telemetry |
 | Missing keys, unavailable model, timeouts, empty retrieval, database errors | backend/service.py, exception handlers, agent deadline, live checks | Implemented; missing-key/empty-retrieval/rollback live checks passed; not every failure re-injected in the final run |
 | Run/test/troubleshoot/extend handoff | README, architecture, manual test plan, evaluator guide | Present; clean-clone verification remains outstanding |
-| Public GitHub source repository | Source ZIP and publishing instructions | MISSING: user plans to create repository later |
+| Public GitHub source repository | https://github.com/Sathvik257/lenny-growth-assistant | Published; initial GitHub Actions run 34956514354 passed |
 | README with all requested topics | README.md | Present |
 | PRD with flows, acceptance criteria and plan | PRD.md | Present |
 | design.md with UX, states, responsiveness, accessibility | design.md | Present; full accessibility audit not established |
@@ -66,9 +66,9 @@ The engagement explicitly asks for deploying locally, and the demo must run Olla
 1. Review a successful local Q&A, essay and HTML artifact against their cited excerpts; prepare outputs before recording. The small local model's semantic accuracy is the largest product weakness.
 2. Test the documented startup from a clean extracted source folder or another machine. Existing prepared-workspace tests are not a substitute for this acceptance criterion.
 3. If you can supply an Anthropic API key, exercise a successful cloud question and artifact. The code integration is present, but missing-key behavior alone does not prove it works.
-4. Create and verify the public GitHub repository, with source and logs but no .env/runtime data. Check the actual commit contents.
+4. Public GitHub publication is complete. Keep secrets and runtime data excluded from future commits.
 5. Record the required 2–3 minute camera-on local Ollama demo, upload to YouTube and verify evaluator access.
 6. Submit the repository/video links through https://forms.gle/LgotDHNVxW1mbzNE7 by the stated deadline.
 
 ## Conclusion
-The main application and documentation components are present, but the submission is not complete. Public repository/video/form deliverables are missing, reproducibility and cloud success remain unverified, and strict semantic grounding is not guaranteed. Do not label every assignment requirement as passed.
+The main application and documentation components are present and the public source repository is published. All 50 automated checks passed locally and the initial GitHub Actions run passed. Fresh dependencies and an isolated database were verified on this machine; a separate-machine or Docker deployment remains untested. The recorded video and form submission are still pending, cloud success remains unverified, and strict semantic grounding is not guaranteed. Do not label every assignment requirement as passed.

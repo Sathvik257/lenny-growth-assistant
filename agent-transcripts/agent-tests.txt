@@ -1,0 +1,18 @@
+
+> lenny-growth-studio@1.0.0 test:agent
+> node --test agent/*.test.mjs
+
+✔ generation cache isolates models and sessions and survives reread (3.0953ms)
+✔ essay skill is loaded only for the essay route (2.7113ms)
+✔ untrusted source instructions stay in data and do not become system instructions (1.1555ms)
+✔ artifact prompt blocks scripts and fences are stripped (0.3251ms)
+✔ incomplete essay sections fail instead of becoming a saved draft (3.4359ms)
+✔ essay cleanup removes drafting scaffolding while keeping content and citations (0.6522ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.8802

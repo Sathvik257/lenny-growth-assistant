@@ -1,0 +1,8 @@
+{
+  "database": "lenny_fresh_18e08e60afbd",
+  "transcripts": 3,
+  "frontend_http": 200,
+  "persistence_across_clients": true,
+  "unsupported_query": true,
+  "scope": "Fresh dependencies and source copy; existing PostgreSQL service; no generated AI answer in this check"
+}

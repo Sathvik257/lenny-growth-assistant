@@ -1,0 +1,43 @@
+{
+  "ready": {
+    "status": "ready",
+    "transcripts": 303
+  },
+  "status": {
+    "transcripts": 303,
+    "chunks": 23178,
+    "database": true,
+    "agent": true,
+    "default_provider": "ollama",
+    "providers": [
+      {
+        "id": "ollama",
+        "label": "Local \u00b7 Ollama",
+        "model": "qwen2.5:3b",
+        "available": true
+      },
+      {
+        "id": "anthropic",
+        "label": "Cloud \u00b7 Anthropic",
+        "model": "claude-sonnet-4-5",
+        "available": false
+      }
+    ]
+  },
+  "unsupported": {
+    "http": 200,
+    "answer": "I couldn't find enough supporting material in the indexed transcripts to answer that reliably. Try naming a product topic, framework, or podcast guest. I won't fill the gap with an unsupported answer.",
+    "sources": []
+  },
+  "cloud_without_key": {
+    "http": 503,
+    "error": {
+      "error": {
+        "code": "missing_key",
+        "message": "Add ANTHROPIC_API_KEY to .env and restart the services, or select Ollama.",
+        "request_id": "295a6d69-4129-40ec-a2d8-7dd50c134082"
+      }
+    }
+  },
+  "failed_turn_rollback": true
+}

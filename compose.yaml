@@ -1,0 +1,85 @@
+name: lenny-growth-assistant
+services:
+  postgres:
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_USER: lenny
+      POSTGRES_PASSWORD: lenny_local_only
+      POSTGRES_DB: lenny
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lenny"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  ollama:
+    image: ollama/ollama:0.34.0
+    environment:
+      OLLAMA_CONTEXT_LENGTH: 8192
+      OLLAMA_NUM_PARALLEL: 1
+    volumes:
+      - ollama-data:/root/.ollama
+  model-init:
+    image: ollama/ollama:0.34.0
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    depends_on:
+      - ollama
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - "until ollama list >/dev/null 2>&1; do sleep 2; done; ollama pull ${OLLAMA_MODEL:-qwen2.5:3b}"
+  ingest:
+    build: .
+    user: root
+    environment:
+      DATABASE_URL: postgresql+psycopg://lenny:lenny_local_only@postgres:5432/lenny
+    volumes:
+      - transcript-data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["sh", "-c", "python scripts/fetch-transcripts.py && python -m backend.ingest"]
+  agent:
+    build:
+      context: .
+      dockerfile: agent/Dockerfile
+    environment:
+      AGENT_HOST: 0.0.0.0
+      AGENT_TOKEN: ${AGENT_TOKEN:-local-development-only}
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:3b}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-sonnet-4-5}
+      MODEL_TIMEOUT_SECONDS: ${MODEL_TIMEOUT_SECONDS:-1500}
+    depends_on:
+      model-init:
+        condition: service_completed_successfully
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg://lenny:lenny_local_only@postgres:5432/lenny
+      AGENT_URL: http://agent:8788
+      AGENT_TOKEN: ${AGENT_TOKEN:-local-development-only}
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:3b}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-sonnet-4-5}
+      LLM_PROVIDER: ${LLM_PROVIDER:-ollama}
+      MODEL_TIMEOUT_SECONDS: ${MODEL_TIMEOUT_SECONDS:-1500}
+    depends_on:
+      ingest:
+        condition: service_completed_successfully
+      agent:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health/ready')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+volumes:
+  postgres-data:
+  ollama-data:
+  transcript-data:

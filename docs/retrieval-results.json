@@ -1,0 +1,127 @@
+{
+  "scope": "Guest-anchored retrieval; does not measure semantic answer correctness or unanchored paraphrase recall.",
+  "cases": [
+    {
+      "query": "How does Sean Ellis measure product market fit with a survey?",
+      "expected_guest": "Sean Ellis",
+      "retrieved_guests": [
+        "Sean Ellis",
+        "Sean Ellis",
+        "Benjamin Lauzier",
+        "Rahul Vohra",
+        "Jeff Weinstein"
+      ],
+      "hit": true
+    },
+    {
+      "query": "How does Rahul Vohra improve product market fit at Superhuman?",
+      "expected_guest": "Rahul Vohra",
+      "retrieved_guests": [
+        "Rahul Vohra",
+        "Rahul Vohra",
+        "Jake Knapp + John Zeratsky 2.0",
+        "Todd Jackson",
+        "Sean Ellis"
+      ],
+      "hit": true
+    },
+    {
+      "query": "How does April Dunford define positioning and competitive alternatives?",
+      "expected_guest": "April Dunford",
+      "retrieved_guests": [
+        "April Dunford",
+        "April Dunford",
+        "Various (Year-End Review)",
+        "Various (Year-End Review)",
+        "Hamilton Helmer"
+      ],
+      "hit": true
+    },
+    {
+      "query": "What does Teresa Torres recommend for continuous discovery customer interviews?",
+      "expected_guest": "Teresa Torres",
+      "retrieved_guests": [
+        "Teresa Torres",
+        "Teresa Torres",
+        "Oji Udezue",
+        "Oji Udezue",
+        "Melissa Perri + Denise Tilles"
+      ],
+      "hit": true
+    },
+    {
+      "query": "How does Brian Balfour describe growth loops and retention?",
+      "expected_guest": "Brian Balfour",
+      "retrieved_guests": [
+        "Brian Balfour",
+        "Brian Balfour",
+        "Christopher Miller",
+        "Various (Year-End Review)",
+        "Ben Williams"
+      ],
+      "hit": true
+    },
+    {
+      "query": "What does Shreyas Doshi say about pre mortems and product strategy?",
+      "expected_guest": "Shreyas Doshi",
+      "retrieved_guests": [
+        "Shreyas Doshi",
+        "Shreyas Doshi",
+        "Annie Duke",
+        "Annie Duke",
+        "Richard Rumelt"
+      ],
+      "hit": true
+    },
+    {
+      "query": "How does Marty Cagan describe empowered product teams?",
+      "expected_guest": "Marty Cagan",
+      "retrieved_guests": [
+        "Marty Cagan",
+        "Marty Cagan",
+        "Teresa Torres",
+        "Gokul Rajaram",
+        "Vikrama Dhiman"
+      ],
+      "hit": true
+    },
+    {
+      "query": "What does Elena Verna say about product led growth?",
+      "expected_guest": "Elena Verna",
+      "retrieved_guests": [
+        "Elena Verna",
+        "Elena Verna",
+        "Elena Verna 3.0",
+        "Elena Verna 2.0",
+        "Elena Verna 2.0"
+      ],
+      "hit": true
+    },
+    {
+      "query": "What does Brian Chesky say about Airbnb product design?",
+      "expected_guest": "Brian Chesky",
+      "retrieved_guests": [
+        "Brian Chesky",
+        "Brian Chesky",
+        "Katie Dill",
+        "Sanchan Saxena",
+        "Katie Dill"
+      ],
+      "hit": true
+    },
+    {
+      "query": "How does Julie Zhuo think about management and feedback?",
+      "expected_guest": "Julie Zhuo",
+      "retrieved_guests": [
+        "Julie Zhuo",
+        "Julie Zhuo",
+        "Upasna Gautam",
+        "Daniel Lereya",
+        "Christopher Miller"
+      ],
+      "hit": true
+    }
+  ],
+  "hits": 10,
+  "total": 10
+}

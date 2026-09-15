@@ -1,0 +1,28 @@
+[
+  {
+    "mode": "essay",
+    "elapsed_seconds": 391,
+    "word_count": 1360,
+    "warnings": [],
+    "artifact_id": "0b659275-4614-4d0d-8817-df0f6a200d2a",
+    "source_labels": [
+      "S1",
+      "S2"
+    ],
+    "manual_review": {
+      "semantic_status": "Needs source review: composite or invented quotation and loose attribution observed.",
+      "quotation_warning": "Some quoted text could not be matched verbatim to the retrieved passages. Verify or paraphrase it before reuse.",
+      "warning_applied_after_generation": true
+    }
+  },
+  {
+    "mode": "html",
+    "elapsed_seconds": 80,
+    "word_count": 106,
+    "warnings": [],
+    "artifact_id": "e8c81261-721c-4d89-9f89-aa8c7de25c03",
+    "source_labels": [
+      "S1"
+    ]
+  }
+]

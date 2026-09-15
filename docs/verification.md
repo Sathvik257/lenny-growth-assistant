@@ -1,5 +1,9 @@
 # Verification record
 
+## Final local-only recheck
+
+After removing hosting-provider files, all 50 automated checks passed again: 37 PostgreSQL/backend tests, nine agent/startup tests and four sanitizer tests. The live API was healthy with 303 transcripts and 23,178 chunks, PostgreSQL and Pi available, and the local qwen2.5:3b model available. A new independent session successfully saved an unsupported-query exchange, returned both messages on reload, and was deleted with HTTP 204. No new model-generated answer or essay was requested in this recheck. Cloud generation, the recorded video and form submission remain pending. The orange frontend is unchanged.
+
 ## Latest verification — 15 September 2026
 
 37 backend tests passed on PostgreSQL and in a fresh SQLite environment; 9 agent/startup tests and 4 sanitizer tests passed (50 checks total). The frontend production build passed with freshly installed Node dependencies, and pip check found no broken Python requirements. The fresh Node installation reported zero known vulnerabilities. Frontend source hashes remained unchanged.

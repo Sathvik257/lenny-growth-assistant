@@ -2,7 +2,7 @@
 
 ## Latest update
 
-The public repository now exists at https://github.com/Sathvik257/lenny-growth-assistant. Source publication and the GitHub Actions outcome are checked in the final handoff. The historical matrix below records earlier gaps; the following changes supersede those entries:
+The public repository is published at https://github.com/Sathvik257/lenny-growth-assistant. The source targets local deployment, with hosting-provider files removed. Final rechecking passed all 50 tests (37 PostgreSQL/backend, nine agent/startup, four sanitizer) and live checks for 303 transcripts, independent session creation, unsupported-query handling, persisted messages and cleanup. The following changes are included:
 
 - Artifact follow-ups now include a bounded excerpt of the prior document, with citation labels remapped to current evidence.
 - Native startup identifies this project before reusing a server and skips occupied ports, preventing an unrelated app from appearing as this preview.
@@ -46,17 +46,17 @@ The engagement explicitly asks for deploying locally, and the demo must run Olla
 | Artifact viewer beside chat | src/App.tsx, source/preview/download controls | Desktop side panel and narrow-screen overlay inspected; frontend retained unchanged |
 | Untrusted HTML isolation/sanitization explained and implemented | src/security.ts, empty iframe sandbox, CSP, architecture.md | Four sanitizer tests and prior browser script probe passed; not a complete security audit |
 | Practical one-command startup | start.ps1; Docker Compose setup | Present; prepared Windows startup exercised, fresh-machine workflow and Docker execution NOT verified |
-| Safe .env.example; no secrets committed | .env.example, ignore rules, explicit source-only archive | Archive excludes .env/runtime/dependencies; public Git history does not exist yet and must be checked when publishing |
+| Safe .env.example; no secrets committed | .env.example, ignore rules, explicit source-only archive | Published source and archive exclude .env/runtime/dependencies; source secret-pattern scan passed at publication |
 | Structured logs and diagnostic visibility | API request IDs/status/timing; model/retrieval events; UI error handling | Present; artifact security tests cover rendering safeguards, no centralized browser telemetry |
 | Missing keys, unavailable model, timeouts, empty retrieval, database errors | backend/service.py, exception handlers, agent deadline, live checks | Implemented; missing-key/empty-retrieval/rollback live checks passed; not every failure re-injected in the final run |
-| Run/test/troubleshoot/extend handoff | README, architecture, manual test plan, evaluator guide | Present; clean-clone verification remains outstanding |
-| Public GitHub source repository | https://github.com/Sathvik257/lenny-growth-assistant | Published; initial GitHub Actions run 34956514354 passed |
+| Run/test/troubleshoot/extend handoff | README, architecture, manual test plan, evaluator guide | Present; fresh source/dependencies and an isolated database verified on this machine; separate-machine startup remains untested |
+| Public GitHub source repository | https://github.com/Sathvik257/lenny-growth-assistant | Published; local-only cleanup workflow 34962425906 passed; check Actions for the latest commit |
 | README with all requested topics | README.md | Present |
 | PRD with flows, acceptance criteria and plan | PRD.md | Present |
 | design.md with UX, states, responsiveness, accessibility | design.md | Present; full accessibility audit not established |
 | architecture.md with schema/API/security/topology | architecture.md | Present |
 | Coding-agent transcripts/logs and failed attempts | agent-transcripts/ curated chronology and actual test logs | Present as curated logs; not a full conversation export. Include export if requested by evaluator |
-| Meaningful tests and manual UI plan | tests/, agent/*.test.mjs, src/security.test.ts, docs/manual-test-plan.md | Latest backend: 32 passed on SQLite/PostgreSQL. Unchanged agent: 6 passed; sanitizer: 4 passed |
+| Meaningful tests and manual UI plan | tests/, agent/*.test.mjs, scripts/*.test.mjs, src/security.test.ts, docs/manual-test-plan.md | Final recheck: 37 PostgreSQL/backend, nine agent/startup and four sanitizer tests passed |
 | 2–3 minute camera-enabled YouTube demo | docs/demo-script.md provides plan only | MISSING: record real local Ollama demo and upload |
 | Submission form | Link in START_HERE.md and README | NOT submitted |
 | Deadline | Assignment says 15/09/26 EOD | 15 September 2026; timezone unspecified |

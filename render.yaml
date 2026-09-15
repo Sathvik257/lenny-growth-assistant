@@ -1,26 +1,11 @@
-# Paid services. Review Render's displayed estimate before creating resources.
+# Free demo hosting. Optional Anthropic API usage is billed separately.
 services:
-  - type: pserv
-    name: lenny-agent
-    runtime: docker
-    dockerfilePath: ./agent/Dockerfile
-    plan: starter
-    envVars:
-      - key: AGENT_TOKEN
-        generateValue: true
-      - key: ANTHROPIC_API_KEY
-        sync: false
-      - key: ANTHROPIC_MODEL
-        value: claude-sonnet-4-5
-      - key: MODEL_TIMEOUT_SECONDS
-        value: "240"
   - type: web
-    name: lenny-studio
+    name: lenny-studio-free
     runtime: docker
-    dockerfilePath: ./Dockerfile
-    plan: standard
+    dockerfilePath: ./render.Dockerfile
+    plan: free
     healthCheckPath: /api/health/live
-    preDeployCommand: python -m backend.ingest
     envVars:
       - key: ENVIRONMENT
         value: production
@@ -36,31 +21,19 @@ services:
         value: "30"
       - key: DATABASE_URL
         fromDatabase:
-          name: lenny-database
+          name: lenny-database-free
           property: connectionString
       - key: AGENT_URL
-        fromService:
-          name: lenny-agent
-          type: pserv
-          property: hostport
+        value: http://127.0.0.1:8788
+      - key: AGENT_HOST
+        value: 127.0.0.1
       - key: AGENT_TOKEN
-        fromService:
-          name: lenny-agent
-          type: pserv
-          envVarKey: AGENT_TOKEN
-      - key: ANTHROPIC_API_KEY
-        fromService:
-          name: lenny-agent
-          type: pserv
-          envVarKey: ANTHROPIC_API_KEY
+        generateValue: true
       - key: ANTHROPIC_MODEL
-        fromService:
-          name: lenny-agent
-          type: pserv
-          envVarKey: ANTHROPIC_MODEL
+        value: claude-sonnet-4-5
 databases:
-  - name: lenny-database
-    plan: basic-256mb
+  - name: lenny-database-free
+    plan: free
     databaseName: lenny
     user: lenny
     ipAllowList: []

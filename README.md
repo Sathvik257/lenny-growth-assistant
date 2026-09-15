@@ -160,7 +160,7 @@ This is a local evaluation product. Production exposure requires real authentica
 
 ## Host on Render
 
-Use the included `render.yaml` Blueprint and follow [the deployment guide](docs/render-deployment.md). It provisions a password-protected hosted demo with a private Pi agent and PostgreSQL. Paid Render services and an Anthropic API key are required; keep Ollama on your computer for the assignment demo. Cloud deployment still needs a live smoke test.
+Use the included `render.yaml` Blueprint and follow [the deployment guide](docs/render-deployment.md). It creates a free web service with an internal Pi agent and free PostgreSQL. Leave Root Directory blank. The hosted demo uses 40 real transcripts to fit 512 MB RAM; the native version keeps the full corpus. Free hosting does not include free AI: add an existing Anthropic key separately to enable generation. Without a model connection the website opens but generation is unavailable. Free PostgreSQL expires after 30 days. Keep Ollama on your computer for the assignment demo.
 
 ## Assignment checklist
 

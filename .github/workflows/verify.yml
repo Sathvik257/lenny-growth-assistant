@@ -38,3 +38,23 @@ jobs:
       - run: npm run test:agent
       - run: npm run test:ui
       - run: npm run build
+      - name: Build free Render container
+        run: docker build -f render.Dockerfile -t lenny-free .
+      - name: Verify container under the free-tier memory limit
+        env:
+          ACCESS_PASSWORD: ci-reviewer-password-only
+        run: |
+          python -c "import psycopg; c=psycopg.connect('postgresql://lenny:ci-test-only@localhost:5432/postgres',autocommit=True); c.execute('CREATE DATABASE lenny_render_smoke'); c.close()"
+          docker run -d --name lenny-free --network host --memory 512m --memory-swap 512m \
+            -e PORT=18080 -e ENVIRONMENT=production \
+            -e ACCESS_PASSWORD="$ACCESS_PASSWORD" \
+            -e AGENT_TOKEN=ci-agent-token-at-least-thirty-two-characters \
+            -e LLM_PROVIDER=anthropic \
+            -e DATABASE_URL=postgresql://lenny:ci-test-only@localhost:5432/lenny_render_smoke lenny-free
+          python scripts/render-smoke.py
+          docker stats --no-stream lenny-free
+      - name: Container diagnostics and cleanup
+        if: always()
+        run: |
+          docker logs lenny-free 2>/dev/null || true
+          docker rm -f lenny-free 2>/dev/null || true

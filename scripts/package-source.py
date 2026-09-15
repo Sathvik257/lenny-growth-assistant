@@ -7,8 +7,8 @@ root = Path(__file__).resolve().parents[1]
 output = root / 'deliverables'
 output.mkdir(exist_ok=True)
 archive = output / 'Lenny-Growth-Assistant-Source.zip'
-folders = ['src','backend','agent','skills','scripts','tests','docs','agent-transcripts','public','.github']
-root_files = ['README.md','START_HERE.md','PRD.md','design.md','architecture.md','package.json','package-lock.json','requirements.txt','pytest.ini','Dockerfile','compose.yaml','render.yaml','start.ps1','tsconfig.json','vite.config.ts','vitest.config.ts','index.html','.env.example','.gitignore','.dockerignore']
+folders = ['src','backend','agent','api','skills','scripts','tests','docs','agent-transcripts','public','.github']
+root_files = ['README.md','START_HERE.md','PRD.md','design.md','architecture.md','package.json','package-lock.json','requirements.txt','pytest.ini','Dockerfile','render.Dockerfile','compose.yaml','render.yaml','vercel.json','start.ps1','tsconfig.json','vite.config.ts','vitest.config.ts','index.html','.env.example','.gitignore','.dockerignore']
 files = [root / name for name in root_files]
 for folder in folders:
     files.extend(p for p in (root / folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix not in ['.pyc','.log'] and p.name not in ['probe-agent.py','generate-demo.py'])

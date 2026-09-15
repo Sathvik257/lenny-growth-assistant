@@ -1,0 +1,55 @@
+LENNY GROWTH ASSISTANT — 2–3 MINUTE SPEECH
+
+Replace the name if needed. Bracketed lines are screen actions, not spoken text.
+Prepare the examples using demo-prompts.txt. Keep your camera visible.
+Rehearse with your actual outputs; speak only claims those outputs demonstrate.
+
+[Show homepage]
+Hi, I'm Sathvik. This is the Lenny Growth Assistant, a research tool for product
+and growth teams. It helps users find advice across podcast conversations,
+ask follow-up questions, and turn findings into essays and reusable documents.
+My PRD records the user problem, assumptions, success metrics and trade-offs.
+
+[Show provider settings and terminal service status]
+The frontend uses React and TypeScript. FastAPI serves the application, and
+PostgreSQL stores conversations, messages, timestamps, metadata and artifacts.
+The agent layer uses Pi Coding Agent. For this demo, Ollama is selected with
+the local Qwen 2.5 three-billion-parameter model. Anthropic is also integrated
+through configuration, but successful cloud generation was not tested without
+an API key. Providers never switch automatically.
+
+[Show completed Q&A; click a citation and inspect its passage]
+The ingestion pipeline loads 303 real Lenny podcast transcripts, splits them
+into overlapping chunks, and records source metadata and hashes for refreshes.
+BM25 search retrieves relevant passages and supplies them to the agent with
+source labels. Here is my question about Sean Ellis and product-market fit.
+I can inspect the cited passage and open the original transcript.
+
+[Show follow-up; refresh the saved conversation]
+Each chat maintains independent, bounded context. This follow-up stays in the
+same conversation, and refreshing demonstrates that messages persist.
+
+[Show prepared essay]
+I generated these examples earlier using local Ollama because CPU generation
+takes several minutes. The dedicated Ship 30 writing skill drafts an essay
+targeting approximately twelve hundred and fifty words, with a hook, headings,
+bullets, selective bold text and a practical takeaway. I review its citations
+and any length or attribution warnings before using it.
+
+[Show HTML Preview, Source and Download]
+The HTML brief is stored as an artifact with preview, source and download
+controls. Generated HTML is sanitized and displayed inside a sandboxed iframe
+that blocks scripts and external network access.
+
+[Show separate unsupported-question example]
+When retrieval finds insufficient supporting material, the application
+acknowledges that limitation rather than filling the gap with an answer.
+
+[Show GitHub README and successful workflow]
+The handoff includes one-command local startup, safe environment configuration,
+structured logs, health checks, development records and troubleshooting.
+All fifty automated checks passed in the final verification.
+My main trade-off is inspectable lexical retrieval and a small local model:
+it is practical locally, but CPU generation is slow and citations alone do
+not guarantee factual accuracy. Generated claims still need evidence review.
+Thank you.

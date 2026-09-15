@@ -1,0 +1,42 @@
+LENNY GROWTH ASSISTANT — DEMO PROMPTS
+
+START LOCALLY (PowerShell)
+cd "C:\Users\sweth\Downloads\OOGWAY"
+.\start.ps1 -Port 8001
+
+Open the URL printed by startup. On this prepared workspace it is normally
+http://127.0.0.1:8001. Keep Ollama selected for the mandatory local-model demo.
+
+CHECK SERVICES
+Invoke-RestMethod http://127.0.0.1:8001/api/status
+Confirm database and agent are true and Ollama is available.
+
+1. ASK A QUESTION
+How does Sean Ellis measure product-market fit with a survey?
+
+2. FOLLOW UP IN THE SAME CONVERSATION
+How could a small startup apply that approach? Separate transcript-supported advice from anything the sources do not establish.
+
+3. WRITE AN ESSAY — select Write an essay in the same conversation
+Write an approximately 1,250-word essay for startup founders about measuring product-market fit, based on the evidence in this conversation. Use a strong hook, headings, bullets, selective bold text, and a practical takeaway. Cite the supporting transcripts.
+
+4. CREATE AN ARTIFACT — select Create an artifact in the same conversation
+Create a one-page HTML/CSS product-market-fit brief from this conversation. Include the key findings, a checklist, and source citations.
+
+5. UNSUPPORTED QUESTION — start a separate conversation, select Ask a question
+What is the weather in Hyderabad tomorrow?
+
+PREPARATION
+Generate and review the Q&A, follow-up, essay and HTML artifact before recording.
+Local CPU generation can take several minutes. Inspect citations and warnings;
+check essay length and formatting, and verify Preview, Source and Download.
+Show actual outputs, not a scripted answer. If a result has a problem, correct
+or regenerate it before recording rather than claiming it passed.
+Explain that prepared examples were generated earlier with local Ollama.
+Keep your camera visible throughout the 2–3 minute recording.
+
+SUBMISSION
+Repository: https://github.com/Sathvik257/lenny-growth-assistant
+Upload the real demo to YouTube and verify evaluator access.
+Form: https://forms.gle/LgotDHNVxW1mbzNE7
+Public website hosting is not required. The localhost URL is not a public link.

@@ -57,18 +57,18 @@ In total, the final source passed 33 automated checks (23 backend on PostgreSQL,
 
 The expanded backend suite passed 29 tests on SQLite and separately on PostgreSQL; agent tests passed 6, frontend sanitizer tests passed 4, and the production build passed (39 automated checks in total). The PostgreSQL service was initially offline; it was restored and the full integration suite then passed. Dependency deprecation/configuration warnings remain in the saved log.
 
-Added production reviewer authentication, secret validation, a single-generation gate, and a rolling global attempt limit. Added URL normalization for Render, a pinned corpus download in the image, an idempotent pre-deploy import and a Render Blueprint. This is a single-instance review deployment, not multi-user account authentication.
+Added optional production reviewer authentication, secret validation, a single-generation gate, and a rolling global attempt limit. Database and agent URL normalization and pinned corpus downloads remain supported. Hosting-provider deployment files have been removed; the handoff targets reproducible local startup. Reviewer access is for a single-instance demo, not multi-user account authentication.
 
 Retrieval precomputes guest names and promotional/introduction flags once instead of repeating regular expressions over the entire corpus on each question. Initialization is serialized to prevent duplicate index builds. HTML preview sanitization is memoized by artifact content and format, avoiding repeated parsing during typing/timers. No percentage speedup or model-generation acceleration is claimed.
 
-Browser verification confirmed the updated layout and unavailable-provider notice. The latest source retains the previously recorded generation-quality limitations. Docker execution, Render deployment, and cloud generation remain unverified until deployment credentials are supplied.
+Browser verification confirmed the updated layout and unavailable-provider notice. The latest source retains the previously recorded generation-quality limitations. The local Compose workflow has not been executed on the development machine; successful cloud model generation remains unverified without an API key.
 
 ## Final review — 14 September 2026
 
 - 30 backend tests passed on PostgreSQL and SQLite, 6 agent tests passed, 4 frontend sanitizer tests passed: 40 automated checks. Production frontend build passed. Production dependency audit found 0 known vulnerabilities.
 - Live smoke checks passed for database/corpus readiness (303 transcripts, 23,178 chunks), local-model availability, unsupported-query handling, missing-cloud-key errors, failed-turn rollback and temporary conversation cleanup. See live-checks.json.
 - Browser reopened the latest completed user question and its evidence. The actual model generation took 136,688 ms. Manual review found Sean Ellis incorrectly associated with a Rahul Vohra source. Added an explicit bracketed guest/citation mismatch warning, including when displaying saved answers; its regression test passes. The answer remains a draft needing review. This detector is narrow and cannot establish semantic truth.
-- Cloud generation, a real Render deployment and Docker image execution remain unverified. An Anthropic key and hosting account are needed for cloud verification. Local writing remains slow and can misattribute evidence.
+- Cloud generation remains unverified without an Anthropic key. The local Compose workflow remains unexecuted on this machine. Local writing remains slow and can misattribute evidence.
 
 ## Evidence fallback update
 

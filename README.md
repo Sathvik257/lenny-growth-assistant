@@ -158,10 +158,6 @@ Publish the source as a public GitHub repository, record the real 2–3 minute c
 
 This is a local evaluation product. Production exposure requires real authentication, authorization, TLS, rate limits and operational hardening. Browser workspace IDs are not authentication.
 
-## Host on Render
-
-Use the included `render.yaml` Blueprint and follow [the deployment guide](docs/render-deployment.md). It creates a free web service with an internal Pi agent and free PostgreSQL. Leave Root Directory blank. The hosted demo uses 40 real transcripts to fit 512 MB RAM; the native version keeps the full corpus. Free hosting does not include free AI: add an existing Anthropic key separately to enable generation. Without a model connection the website opens but generation is unavailable. Free PostgreSQL expires after 30 days. Keep Ollama on your computer for the assignment demo.
-
 ## Assignment checklist
 
 See [docs/assignment-audit.md](docs/assignment-audit.md) for evidence against every requirement and the remaining submission steps. Public hosting is optional in the supplied brief; local Ollama demonstration, public source repository and camera-enabled YouTube video are required.

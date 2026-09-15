@@ -23,6 +23,6 @@ These are concrete engineering choices, not a claim that no other project has si
 Prepare long local generations before recording. Do not present the source-excerpt fallback as a complete synthesized answer.
 
 ## Trade-offs to discuss honestly
-Lexical retrieval is inexpensive and inspectable but misses paraphrases. Small CPU models are slow and can misattribute evidence. The mismatch detector recognizes only explicit bracketed guest/citation pairs; it does not verify every claim or every speaker inside an episode. Render provisioning is prepared but cloud execution remains unverified without credentials. Reviewer access and rate limiting target a single-instance demo, not a multi-tenant service.
+Lexical retrieval is inexpensive and inspectable but misses paraphrases. Small CPU models are slow and can misattribute evidence. The mismatch detector recognizes only explicit bracketed guest/citation pairs; it does not verify every claim or every speaker inside an episode. Cloud model execution remains unverified without credentials. Reviewer access and rate limiting target a single-instance demo, not a multi-tenant service.
 
 Read PRD.md, architecture.md, design.md and docs/verification.md before the interview. Be prepared to explain the code and the AI assistance used to build it.

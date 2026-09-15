@@ -14,7 +14,7 @@ The YouTube camera demo, submission form, actual cloud-provider generation and f
 Compared against the full assignment supplied in pasted-text.txt. This report distinguishes existing implementation from verified behavior and external deliverables. The orange frontend was not modified.
 
 ## Important interpretation
-The engagement explicitly asks for deploying locally, and the demo must run Ollama. A publicly hosted application URL is not listed as a deliverable. Render/Vercel hosting is optional. A public GitHub repository and a YouTube demo are mandatory.
+The engagement explicitly asks for deploying locally, and the demo must run Ollama. A publicly hosted application URL is not listed as a deliverable. A public GitHub repository and a YouTube demo are mandatory. The delivered source targets local deployment.
 
 ## Requirement-by-requirement evidence
 

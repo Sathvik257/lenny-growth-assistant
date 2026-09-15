@@ -19,8 +19,4 @@ Start with README.md. Review docs/verification.md for measured results and remai
 
 The brief lists 15 September 2026 EOD as its deadline and does not specify a timezone. The public repository is published and its initial GitHub Actions run passed. Video upload and form submission remain to be completed.
 
-## Host on Render
-
-Use the included `render.yaml` Blueprint and follow [the deployment guide](docs/render-deployment.md). It creates a free web service containing the Pi agent and free PostgreSQL. Leave Root Directory blank. The hosted demo uses 40 real transcripts to fit the memory limit; the local copy keeps all 303. AI generation needs a separately configured model connection; Anthropic usage is not free. Free PostgreSQL expires after 30 days. Keep Ollama locally for the assignment demo.
-
 For the current orange local preview use http://127.0.0.1:8001/ while another project occupies port 8000. The source archive retains the original orange interface. Read docs/evaluator-guide.md for the review walkthrough and engineering trade-offs.
